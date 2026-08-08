@@ -154,3 +154,8 @@ footer::before{content:"";display:block;height:4px;background:var(--spectrum)}
   #menu.open{transform:none}
   #burger{display:block;z-index:950}
 }
+
+.qprog{height:6px;border-radius:99px;background:rgba(255,255,255,.08);margin:.2rem 0 1.2rem;overflow:hidden}
+.qprog i{display:block;height:100%;background:var(--spectrum);border-radius:99px;transition:width .4s}
+.qmeta{color:var(--muted);font-size:.8rem;margin-top:1rem}
+#qNext,#qRestart{margin-top:1rem}
