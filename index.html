@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DISPERSIO · Luminous Dispersion by Refraction · Group 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<canvas id="photons"></canvas>
+<div id="cursorGlow"></div>
+<div id="progress"></div>
+
+<header id="nav">
+  <a class="logo" href="#top">
+    <svg width="26" height="24" viewBox="0 0 26 24"><polygon points="13,1 25,23 1,23" fill="none" stroke="url(#lg)" stroke-width="2"/><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff5252"/><stop offset=".5" stop-color="#3ddc84"/><stop offset="1" stop-color="#b06bff"/></linearGradient></defs></svg>
+    DISPERSIO
+  </a>
+  <ul id="menu">
+    <li><a href="#light">Light</a></li>
+    <li><a href="#refraction">Refraction</a></li>
+    <li><a href="#dispersion">Dispersion</a></li>
+    <li><a href="#lab">Prism Lab</a></li>
+    <li><a href="#world">Around Us</a></li>
+    <li><a href="#pool">Solar Pool</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#quiz">Quiz</a></li>
+  </ul>
+  <button id="burger">☰</button>
+</header>
+
+<main id="top">
+<!-- ================= HERO ================= -->
+<section class="hero" style="position:relative">
+  <div>
+    <p class="kicker"><b>Optics</b> · Physics Project · Group n° 2</p>
+    <h1>When white light <span class="grad">splits into colour</span></h1>
+    <p class="lede">An interactive journey through <strong>luminous dispersion by refraction</strong> — the physics behind prisms and rainbows, and the same science that lets solar panels warm your swimming pool.</p>
+    <div class="cta">
+      <a class="btn solid" href="#light">Start exploring ↓</a>
+      <a class="btn ghost" href="#lab">Open the Prism Lab</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b class="grad">380–750 nm</b><span>visible window</span></div>
+      <div class="stat"><b class="grad">n = f(λ)</b><span>refractive index varies</span></div>
+      <div class="stat"><b class="grad">7</b><span>spectral colours</span></div>
+    </div>
+  </div>
+  <div class="heroArt">
+    <svg viewBox="0 0 640 420">
+      <defs>
+        <linearGradient id="gs" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#ff5252"/><stop offset=".2" stop-color="#ff9e3d"/><stop offset=".4" stop-color="#ffe066"/><stop offset=".6" stop-color="#3ddc84"/><stop offset=".8" stop-color="#4da6ff"/><stop offset="1" stop-color="#b06bff"/>
+        </linearGradient>
+        <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      </defs>
+      <line class="flow" x1="15" y1="168" x2="268" y2="200" stroke="#ffffff" stroke-width="3" filter="url(#glow)"/>
+      <polygon points="320,55 190,320 450,320" fill="rgba(255,255,255,.04)" stroke="url(#gs)" stroke-width="2.5"/>
+      <line x1="268" y1="200" x2="372" y2="214" stroke="rgba(255,255,255,.35)" stroke-width="2"/>
+      <g filter="url(#glow)" stroke-width="3">
+        <line class="flow" x1="372" y1="214" x2="625" y2="236" stroke="#ff5252"/>
+        <line class="flow" x1="372" y1="214" x2="625" y2="252" stroke="#ff9e3d"/>
+        <line class="flow" x1="372" y1="214" x2="625" y2="268" stroke="#ffe066"/>
+        <line class="flow" x1="372" y1="214" x2="625" y2="284" stroke="#3ddc84"/>
+        <line class="flow" x1="372" y1="214" x2="625" y2="300" stroke="#4da6ff"/>
+        <line class="flow" x1="372" y1="214" x2="625" y2="316" stroke="#6b7bff"/>
+        <line class="flow" x1="372" y1="214" x2="625" y2="332" stroke="#b06bff"/>
+      </g>
+      <text x="20" y="150" fill="#9aa3c7" font-size="13" font-family="Space Grotesk">white light</text>
+      <text x="540" y="360" fill="#9aa3c7" font-size="13" font-family="Space Grotesk">the spectrum</text>
+    </svg>
+  </div>
+  <a class="scrollHint" href="#light">SCROLL</a>
+</section>
+
+<div class="marq"><div>
+  <span>REFRACTION</span><i>◆</i><span>DISPERSION</span><i>◆</i><span>SPECTRUM</span><i>◆</i><span>SNELL'S LAW</span><i>◆</i><span>CAUCHY</span><i>◆</i><span>NEWTON 1666</span><i>◆</i><span>RAINBOW</span><i>◆</i><span>SOLAR ENERGY</span><i>◆</i>
+  <span>REFRACTION</span><i>◆</i><span>DISPERSION</span><i>◆</i><span>SPECTRUM</span><i>◆</i><span>SNELL'S LAW</span><i>◆</i><span>CAUCHY</span><i>◆</i><span>NEWTON 1666</span><i>◆</i><span>RAINBOW</span><i>◆</i><span>SOLAR ENERGY</span><i>◆</i>
+</div></div>
+
+<!-- ================= 01 LIGHT ================= -->
+<section id="light">
+  <header class="shead reveal">
+    <p class="kicker"><b>01</b> · Foundations</p>
+    <h2>The nature of <em>light</em></h2>
+    <p class="lede">Light is an electromagnetic wave. The human eye only perceives a tiny slice of the full electromagnetic spectrum — the <strong>visible spectrum</strong> — and dispersion is precisely the phenomenon that reveals all the colours hidden inside "white" light.</p>
+  </header>
+  <div class="grid3">
+    <div class="card tilt reveal"><span class="icon">🌊</span><h3>An electromagnetic wave</h3><p>Light is a coupled oscillation of electric and magnetic fields that propagates without a medium. Each wave is characterised by its wavelength λ and frequency f, linked by c = λ·f.</p></div>
+    <div class="card tilt reveal"><span class="icon">⚛️</span><h3>Wave–particle duality</h3><p>Light also behaves as a stream of photons. The energy of each photon is E = h·f, so violet photons (high f) carry more energy than red photons — a fact that matters in absorption and heating.</p></div>
+    <div class="card tilt reveal"><span class="icon">⚡</span><h3>A universal speed limit</h3><p>In vacuum, light travels at c ≈ 3×10⁸ m/s. Inside matter it slows down — and it slows down <em>differently for each colour</em>. That single fact is the origin of dispersion.</p></div>
+  </div>
+  <div class="panel reveal" style="margin-top:2rem">
+    <h3 style="margin-bottom:.6rem">The electromagnetic spectrum — hover / tap the bands</h3>
+    <div class="embar" id="emBar">
+      <div class="seg" style="background:#8d67ff" data-t="Radio waves" data-d="Longest wavelengths (≥ 1 mm). Used in broadcasting, Wi-Fi and MRI.">RADIO</div>
+      <div class="seg" style="background:#5f7cff" data-t="Microwaves" data-d="Used in radar, ovens and satellite communication.">MICRO</div>
+      <div class="seg" style="background:#ff5252" data-t="Infrared" data-d="Heat radiation. Everything warm — including a solar-heated pool — emits infrared.">IR</div>
+      <div class="seg" style="background:linear-gradient(90deg,#b06bff,#4da6ff,#3ddc84,#ffe066,#ff5252)" data-t="Visible light" data-d="The only band we see: 380–750 nm. Dispersion splits it into the colours of the rainbow.">VISIBLE</div>
+      <div class="seg darktxt" style="background:#6b7bff" data-t="Ultraviolet" data-d="Responsible for sunburn and vitamin D production.">UV</div>
+      <div class="seg darktxt" style="background:#4da6ff" data-t="X-rays" data-d="Very energetic; used in medical imaging.">X</div>
+      <div class="seg darktxt" style="background:#b06bff" data-t="Gamma rays" data-d="The most energetic photons, from nuclear processes.">γ</div>
+    </div>
+    <div id="emInfo"><p id="emInfoT">Visible light</p><p id="emInfoD">The only band we see: 380–750 nm. Dispersion splits it into the colours of the rainbow.</p></div>
+    <div class="viswrap">
+      <h3 style="margin-bottom:.8rem">Zoom into the visible band — move your cursor</h3>
+      <div id="visBar"><div id="visMark"></div></div>
+      <div class="visread">
+        <div id="visSwatch"></div>
+        <div><b id="visNm">550 nm</b> <span style="color:var(--muted)" id="visCol">· green</span><br><span style="color:var(--muted);font-size:.85rem" id="visHz">≈ 545 THz</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 02 REFRACTION ================= -->
+<section id="refraction">
+  <header class="shead reveal">
+    <p class="kicker"><b>02</b> · The mechanism</p>
+    <h2>Refraction: light <em>changes speed</em></h2>
+    <p class="lede">When light crosses the boundary between two transparent media, its speed changes and the ray bends. The amount of bending is governed by <strong>Snell's Law</strong>. This is why a straw looks broken in a glass of water and a pool looks shallower than it really is.</p>
+  </header>
+  <div class="split">
+    <div class="reveal">
+      <p style="color:var(--muted)">The <strong style="color:var(--text)">refractive index</strong> of a medium is n = c / v — the ratio between the speed of light in vacuum and in the medium. Air: n ≈ 1.0003 · Water: n ≈ 1.33 · Crown glass: n ≈ 1.52 · Diamond: n ≈ 2.42.</p>
+      <div class="formula">n₁ · sin θ₁ = n₂ · sin θ₂</div>
+      <p style="color:var(--muted)">Entering a denser medium (higher n), light slows down and the ray bends <strong style="color:var(--text)">toward the normal</strong>. The larger the difference between the indices, the stronger the bend. Try the simulator: drag the angle and swap the medium — watch θ₂ shrink as n grows.</p>
+      <div class="read">
+        <div><b id="roT1">45°</b><span>incidence θ₁</span></div>
+        <div><b id="roT2">32°</b><span>refraction θ₂</span></div>
+        <div><b id="roN">1.33</b><span>index n₂</span></div>
+        <div><b id="roV">2.26×10⁸</b><span>v in medium (m/s)</span></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <canvas id="refCanvas" class="sim" width="640" height="430"></canvas>
+      <div class="ctrl">
+        <label>Angle θ₁ <input type="range" id="refAngle" min="0" max="85" value="45"></label>
+        <label>Medium <select id="refMedium">
+          <option value="1.33">Water</option><option value="1.52">Crown glass</option><option value="2.42">Diamond</option>
+        </select></label>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 03 DISPERSION ================= -->
+<section id="dispersion">
+  <header class="shead reveal">
+    <p class="kicker"><b>03</b> · The phenomenon</p>
+    <h2>Dispersion: n depends on <em>wavelength</em></h2>
+    <p class="lede">Crucially, the refractive index is <strong>not the same for every colour</strong>. Light oscillates the electrons of the material as it passes; shorter wavelengths (violet, blue) interact more strongly and are slowed more than longer ones (red). Approximated by <strong>Cauchy's equation</strong>, n(λ) = A + B/λ², this means <strong>violet bends more than red</strong> — and white light fans out into a spectrum.</p>
+  </header>
+  <div class="split">
+    <div class="panel reveal">
+      <h3 style="margin-bottom:.6rem">Refractive index by colour (measured)</h3>
+      <table>
+        <tr><th>Medium</th><th><span class="dot" style="background:var(--red)"></span>Red 656 nm</th><th><span class="dot" style="background:var(--green)"></span>Green 530 nm</th><th><span class="dot" style="background:var(--violet)"></span>Violet 410 nm</th></tr>
+        <tr><td>Water</td><td>1.331</td><td>1.335</td><td>1.342</td></tr>
+        <tr><td>Crown glass</td><td>1.514</td><td>1.519</td><td>1.531</td></tr>
+        <tr><td>Diamond</td><td>2.410</td><td>2.426</td><td>2.458</td></tr>
+      </table>
+      <div class="formula">n(λ) = A + B / λ²</div>
+      <p style="color:var(--muted);font-size:.92rem">The differences look tiny (≈ 0.01 in glass), but after two refractions inside a prism they are enough to open the beam into a full rainbow. Diamond's huge n and strong dispersion (Δn ≈ 0.05) create its famous coloured flashes — the "fire".</p>
+    </div>
+    <div class="reveal">
+      <h3 style="margin-bottom:1rem">Newton's <span class="grad">experimentum crucis</span></h3>
+      <div class="tline">
+        <div class="tnode"><b>1666</b><p>In a dark room, Newton passes a sunbeam through a glass prism and obtains an elongated spectrum — not a round spot.</p></div>
+        <div class="tnode"><b>1672</b><p>With a second, inverted prism he recombines the colours into white light: the colours were <em>inside</em> the light, not created by the glass.</p></div>
+        <div class="tnode"><b>1704</b><p>"Opticks" is published, establishing that white light is a mixture of all the spectral colours.</p></div>
+      </div>
+      <p style="color:var(--muted);margin-top:1.6rem">Before Newton, scholars believed the prism <em>stained</em> the light. His two‑prism experiment proved the opposite: <strong style="color:var(--text)">refraction merely separates what is already there</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 04 PRISM LAB ================= -->
+<section id="lab">
+  <header class="shead reveal">
+    <p class="kicker"><b>04</b> · Interactive</p>
+    <h2>The <em>Prism Lab</em></h2>
+    <p class="lede">Change the material and the apex angle of the prism. Each coloured ray is refracted with its own refractive index computed from Cauchy's equation (thin‑prism approximation δ ≈ (n−1)·A; angular separation exaggerated ×6 for visibility).</p>
+  </header>
+  <div class="panel reveal">
+    <div class="ctrl">
+      <label>Material <select id="labMedium">
+        <option value="water">Water (A=1.324, B=0.0033)</option>
+        <option value="glass" selected>Crown glass (A=1.504, B=0.0042)</option>
+        <option value="diamond">Diamond (A=2.382, B=0.0122)</option>
+      </select></label>
+      <label>Apex angle A <input type="range" id="labApex" min="30" max="80" value="60"></label>
+      <label>Beam tilt <input type="range" id="labTilt" min="-12" max="12" value="0"></label>
+    </div>
+    <canvas id="labCanvas" class="sim" width="960" height="470"></canvas>
+    <div class="read">
+      <div><b id="labSpread">—</b><span>angular spread δ(violet)−δ(red)</span></div>
+      <div><b id="labDRed">—</b><span>deviation red</span></div>
+      <div><b id="labDVio">—</b><span>deviation violet</span></div>
+    </div>
+    <div id="labTable"></div>
+  </div>
+</section>
+
+<!-- ================= 05 AROUND US ================= -->
+<section id="world">
+  <header class="shead reveal">
+    <p class="kicker"><b>05</b> · In the wild</p>
+    <h2>Dispersion <em>around us</em></h2>
+  </header>
+  <div class="grid3">
+    <div class="card tilt reveal"><span class="icon">🌈</span><h3>Rainbows</h3><p>Each raindrop acts as a tiny prism: light refracts on entry, disperses, reflects on the back surface and refracts again on exit. Red leaves at ≈42°, violet at ≈40° — that's why red is always on top.</p></div>
+    <div class="card tilt reveal"><span class="icon">💎</span><h3>Diamond "fire"</h3><p>Diamond combines a huge refractive index with strong dispersion. Multiple total internal reflections spread the colours before they exit, producing the prized coloured flashes.</p></div>
+    <div class="card tilt reveal"><span class="icon">📷</span><h3>Chromatic aberration</h3><p>Camera and telescope lenses focus blue light slightly closer than red, creating colour fringes. Engineers cancel it by combining glasses with different dispersion (achromatic doublets).</p></div>
+    <div class="card tilt reveal"><span class="icon">🌇</span><h3>Sunsets &amp; the sky</h3><p>Atmospheric refraction bends and spreads sunlight near the horizon; combined with scattering, it paints sunsets red and orange while the zenith stays blue.</p></div>
+    <div class="card tilt reveal"><span class="icon">💦</span><h3>Spray &amp; fountains</h3><p>Mist from a garden hose or a fountain shows miniature rainbows on sunny days — dispersion on demand, at arm's length.</p></div>
+    <div class="card tilt reveal"><span class="icon">🔆</span><h3>Crystal &amp; glassware</h3><p>Cut glass and crystal chandeliers throw coloured spots on walls and tables: every facet is a small refracting, dispersing surface.</p></div>
+  </div>
+</section>
+
+<!-- ================= 06 SOLAR POOL ================= -->
+<section id="pool">
+  <header class="shead reveal">
+    <p class="kicker"><b>06</b> · Daily life connection</p>
+    <h2>From the spectrum to <em>pool warming</em></h2>
+    <p class="lede">The same physics of dispersion — sunlight as a mixture of wavelengths, each carrying energy, and refraction at material boundaries — is the operating principle of <strong>solar thermal collectors used to heat swimming pools</strong>. Understanding the spectrum tells us exactly why these panels are black and why a transparent cover boosts their performance.</p>
+  </header>
+  <div class="split">
+    <div class="reveal">
+      <ol class="steps">
+        <li><div><b>Sunlight arrives as a full spectrum</b><p>Dispersion teaches us that white sunlight is a mixture of wavelengths (plus infrared). Every nanometre that strikes the collector delivers energy E = h·f to the material.</p></div></li>
+        <li><div><b>Refraction at the transparent cover</b><p>In glazed collectors, light refracts entering the glass/polycarbonate cover (Snell's law). The cover is chosen to transmit the visible spectrum almost completely while blocking the infrared re‑emitted by the hot plate — the <strong>greenhouse effect</strong>.</p></div></li>
+        <li><div><b>A black absorber captures every colour</b><p>A black surface absorbs <em>all</em> visible wavelengths — it is the exact opposite of a prism's job. No colour is reflected, so nearly the whole spectrum becomes thermal energy. That is why solar panels and collector pipes are black.</p></div></li>
+        <li><div><b>Water carries the heat home</b><p>Pool water pumped through the warm absorber pipes returns 1–3 °C hotter per pass, raising the pool temperature degree by degree — free energy, straight from the spectrum.</p></div></li>
+      </ol>
+      <p style="color:var(--muted)">Bonus link: refraction is also why your pool <em>looks shallower</em> than it is — light from the bottom bends away from the normal on leaving the water, lifting the apparent depth. Dispersion and refraction are literally swimming with you.</p>
+    </div>
+    <div class="reveal">
+      <svg viewBox="0 0 560 400" style="width:100%">
+        <circle cx="70" cy="60" r="26" fill="#ffe066" filter="url(#glow)"/>
+        <g class="flow" stroke-width="3" filter="url(#glow)">
+          <line x1="95" y1="75" x2="230" y2="150" stroke="#ff5252"/><line x1="100" y1="85" x2="255" y2="165" stroke="#ffe066"/><line x1="90" y1="90" x2="285" y2="180" stroke="#3ddc84"/><line x1="105" y1="95" x2="315" y2="195" stroke="#4da6ff"/>
+        </g>
+        <g transform="rotate(18 300 220)">
+          <rect x="170" y="150" width="280" height="14" rx="4" fill="rgba(120,200,255,.35)" stroke="#4da6ff"/>
+          <rect x="170" y="176" width="280" height="46" rx="6" fill="#111318" stroke="#333"/>
+          <path d="M180 199 h260" stroke="#4da6ff" stroke-width="8" stroke-dasharray="16 10" class="flow"/>
+        </g>
+        <rect x="120" y="300" width="330" height="70" rx="12" fill="rgba(77,166,255,.25)" stroke="#4da6ff"/>
+        <path d="M450 320 q20 -60 10 -110" stroke="#4da6ff" stroke-width="6" fill="none" class="flow"/>
+        <path d="M160 210 q-30 60 -10 95" stroke="#6b7bff" stroke-width="6" fill="none" class="flow"/>
+        <text x="150" y="130" fill="#9aa3c7" font-size="12">refraction at cover</text>
+        <text x="330" y="255" fill="#9aa3c7" font-size="12">black absorber: all λ absorbed</text>
+        <text x="140" y="392" fill="#9aa3c7" font-size="12">pool water (n=1.33 — refraction &amp; apparent depth)</text>
+      </svg>
+      <div class="panel" style="margin-top:1.4rem">
+        <h3>⚙️ Pool‑heater simulator</h3>
+        <div class="ctrl">
+          <label>Sun <input type="range" id="pSun" min="200" max="1100" value="800"></label>
+          <label>Area m² <input type="range" id="pArea" min="1" max="12" value="4"></label>
+          <label>Flow L/min <input type="range" id="pFlow" min="10" max="100" value="40"></label>
+          <label>T in °C <input type="range" id="pTin" min="18" max="32" value="26"></label>
+          <label>Cover <select id="pCover"><option value="0.68">Unglazed η=68%</option><option value="0.78" selected>Glazed η=78%</option></select></label>
+        </div>
+        <div class="read">
+          <div><b id="oPower">—</b><span>thermal power</span></div>
+          <div><b id="oDelta">—</b><span>ΔT per pass</span></div>
+          <div><b class="bigT" id="oTout">—</b><span>water out</span></div>
+        </div>
+        <div id="therm"><div id="thermFill"></div></div>
+        <p style="color:var(--muted);font-size:.85rem;margin-top:.8rem" id="oPool">—</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 07 GALLERY ================= -->
+<section id="gallery">
+  <header class="shead reveal">
+    <p class="kicker"><b>07</b> · Our project</p>
+    <h2>Project <em>gallery</em></h2>
+    <p class="lede">Upload the photos of our experiments and prototype — drag &amp; drop or click. Images are shown instantly during the presentation (stored locally in this session).</p>
+  </header>
+  <div id="drop" class="reveal">
+    <div class="icon">📸</div>
+    <p><strong>Drop your project photos here</strong><br>or click to browse — PNG / JPG / WEBP, multiple files allowed</p>
+    <input type="file" id="fileIn" accept="image/*" multiple hidden>
+  </div>
+  <div id="shots"></div>
+</section>
+<div id="lightbox"><button id="lbClose">✕</button><img id="lbImg" alt=""><p id="lbCap"></p></div>
+
+<!-- ================= 08 QUIZ ================= -->
+<section id="quiz">
+  <header class="shead reveal">
+    <p class="kicker"><b>08</b> · Check your understanding</p>
+    <h2>The <em>quiz</em></h2>
+  </header>
+  <div class="panel reveal" id="quizBox"></div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="fwrap">
+    <h3>Created with 🌈 and physics by</h3>
+    <div class="fgroup">GROUP n° 2</div>
+    <div class="members">
+      <div class="member"><div class="avatar" style="background:linear-gradient(135deg,#ff5252,#ff9e3d)">AS</div><strong>Arthur Szabo de Castro</strong><p>Group n° 2</p></div>
+      <div class="member"><div class="avatar" style="background:linear-gradient(135deg,#3ddc84,#4da6ff)">CE</div><strong>Carlos Eduardo Fernandes Sepulveda da Costa</strong><p>Group n° 2</p></div>
+      <div class="member"><div class="avatar" style="background:linear-gradient(135deg,#6b7bff,#b06bff)">VY</div><strong>Vitor Yoshiaki Onuki</strong><p>Group n° 2</p></div>
+    </div>
+    <p class="fnote">DISPERSIO · LUMINOUS DISPERSION BY REFRACTION · PHYSICS CLASS PROJECT · 2026</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
